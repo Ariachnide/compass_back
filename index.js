@@ -19,7 +19,7 @@ app.get("/", (req, res, next) => {
     res.send("Hello World");
 });
 
-// app.use("/users", userRoutes);
+app.use("/users", userRoutes);
 
 app.use((error, req, res, next) => {
     console.log(error);
@@ -32,6 +32,6 @@ sequelize
     .sync()
     .then(result => {
         console.log("Database connected");
-        app.listen(3000);
+        app.listen(8000);
     })
     .catch(err => console.log(err));
