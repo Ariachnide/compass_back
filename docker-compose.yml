@@ -1,5 +1,3 @@
-version: "3.9"
-
 services:
     compass_api:
         container_name: compass_api
