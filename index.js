@@ -2,7 +2,6 @@ import express from "express";
 import bodyparser from "body-parser";
 import sequelize from "./util/database.js";
 import userRoutes from "./routes/users.js";
-import User from "./models/user.js";
 
 const app = express();
 
