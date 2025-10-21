@@ -10,6 +10,7 @@
     "type": "git",
     "url": "git+ssh://git@gitlab.com/Ariachnide/compass_back.git"
   },
+  "type": "module",
   "keywords": [],
   "author": "",
   "license": "ISC",
