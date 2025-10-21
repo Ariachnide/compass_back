@@ -17,5 +17,10 @@
   "bugs": {
     "url": "https://gitlab.com/Ariachnide/compass_back/issues"
   },
-  "homepage": "https://gitlab.com/Ariachnide/compass_back#readme"
+  "homepage": "https://gitlab.com/Ariachnide/compass_back#readme",
+  "dependencies": {
+    "express": "^5.1.0",
+    "pg": "^8.16.3",
+    "sequelize": "^6.37.7"
+  }
 }
