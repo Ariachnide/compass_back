@@ -3,13 +3,15 @@ services:
         container_name: compass_api
         build: .
         image: compass_api
+        env_file:
+            - ".env"
         ports:
             - "3000:3000"
         environment:
-            - PG_DB=${PG_DB}
-            - PG_USER=${PG_USER}
-            - PG_PASSWORD=${PG_PASSWORD}
-            - PG_HOST=${PG_HOST}
+            - PG_DB=$PG_DB
+            - PG_USER=$PG_USER
+            - PG_PASSWORD=$PG_PASSWORD
+            - PG_HOST=$PG_HOST
         depends_on:
             - compass_pg_db
 
@@ -19,9 +21,9 @@ services:
         ports:
             - "5432:5432"
         environment:
-            - POSTGRES_DB=${PG_DB}
-            - POSTGRES_USER=${PG_USER}
-            - POSTGRES_PASSWORD=${PG_PASSWORD}
+            - POSTGRES_DB=$PG_DB
+            - POSTGRES_USER=$PG_USER
+            - POSTGRES_PASSWORD=$PG_PASSWORD
         volumes:
             - compass_pg_db_data:/var/lib/postgresql/data
 
