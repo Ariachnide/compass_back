@@ -18,6 +18,8 @@ services:
     compass_pg_db:
         container_name: compass_pg_db
         image: postgres:12
+        secrets:
+            - pg_db_secrets
         ports:
             - "5432:5432"
         environment:
@@ -29,3 +31,7 @@ services:
 
 volumes:
     compass_pg_db_data: {}
+
+secrets:
+    pg_db_secrets:
+        file: ./.env
