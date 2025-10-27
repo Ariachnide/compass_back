@@ -6,7 +6,7 @@ services:
         env_file:
             - ".env"
         ports:
-            - "3000:3000"
+            - "8000:8000"
         environment:
             - PG_DB=$PG_DB
             - PG_USER=$PG_USER
