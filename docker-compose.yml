@@ -8,30 +8,31 @@ services:
         ports:
             - "8000:8000"
         environment:
-            - PG_DB=$PG_DB
-            - PG_USER=$PG_USER
-            - PG_PASSWORD=$PG_PASSWORD
-            - PG_HOST=$PG_HOST
+            - POSTGRES_DB="compass"
+            - POSTGRES_USER="default"
+            - POSTGRES_PASSWORD="defaultPw"
+            - PG_HOST="compass_api"
         depends_on:
             - compass_pg_db
 
     compass_pg_db:
         container_name: compass_pg_db
         image: postgres:12
-        secrets:
-            - pg_db_secrets
+        restart: always
+        # secrets:
+            # - pg_db_secrets
         ports:
             - "5432:5432"
         environment:
-            - POSTGRES_DB=$PG_DB
-            - POSTGRES_USER=$PG_USER
-            - POSTGRES_PASSWORD=$PG_PASSWORD
+            - POSTGRES_DB="compass"
+            - POSTGRES_USER="default"
+            - POSTGRES_PASSWORD="defaultPw"
         volumes:
             - compass_pg_db_data:/var/lib/postgresql/data
 
 volumes:
     compass_pg_db_data: {}
 
-secrets:
-    pg_db_secrets:
-        file: ./.env
+# secrets:
+    # pg_db_secrets:
+        # file: ./.env
